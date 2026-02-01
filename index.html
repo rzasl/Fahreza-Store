@@ -998,7 +998,7 @@
         </div>
         <div class="profile-content">
             <div class="profile-img">
-                <img src="https://rzasl.github.io/Fahreza-Eshal-Setiawan/media/fahreza.jpg" alt="Fahreza Eshal Setiawan">
+                <img src="media/fahreza.jpg" alt="Fahreza Eshal Setiawan">
             </div>
             <h2 class="profile-name">Fahreza Eshal Setiawan</h2>
             <p class="profile-title">Full Stack Developer</p>
@@ -1032,7 +1032,7 @@
             </div>
             
             <div style="margin-top: 30px; text-align: center;">
-                <a href="https://wa.me/6288299435445?text=Halo%20Fahreza%20Store,%20saya%20ingin%20bertanya%20tentang%20layanan%20anda" class="btn btn-primary" target="_blank" style="width: 100%;">
+                <a href="https://wa.me/6288299435445?text=Halo%20Fahreza%20Store,%20saya%20ingin%20bertanya%20tentang%20layanan%20anda.%0A%0AWebsite%20Toko%3A%20https%3A%2F%2Frzasl.github.io%2FFahreza-Store%2F%0A%0ABisa%20dibantu%20untuk%20kebutuhan%20website%20saya%3F" class="btn btn-primary" target="_blank" style="width: 100%;">
                     <i class="fab fa-whatsapp"></i> Hubungi via WhatsApp
                 </a>
             </div>
@@ -1089,7 +1089,7 @@
         <div class="custom-web glass">
             <h3>Buat Website Impian Anda</h3>
             <p>Tim developer kami akan membuat website sesuai dengan desain dan fungsionalitas yang Anda inginkan. Dari website perusahaan, e-commerce, hingga aplikasi web kompleks.</p>
-            <a href="https://wa.me/6288299435445?text=Halo%20Fahreza%20Store,%20saya%20ingin%20konsultasi%20tentang%20pembuatan%20website%20custom" class="btn btn-primary" target="_blank">
+            <a href="https://wa.me/6288299435445?text=Halo%20Fahreza%20Store%2C%20saya%20ingin%20konsultasi%20tentang%20pembuatan%20website%20custom.%0A%0AWebsite%20Toko%3A%20https%3A%2F%2Frzasl.github.io%2FFahreza-Store%2F%0A%0ABisa%20dibantu%20untuk%20kebutuhan%20website%20saya%3F" class="btn btn-primary" target="_blank">
                 <i class="fab fa-whatsapp"></i> Konsultasi Gratis
             </a>
         </div>
@@ -1286,7 +1286,7 @@
 
         function buyNow(id) {
             const template = templates.find(t => t.id === id);
-            const message = `Halo Fahreza Store, saya ingin memesan template *${template.name}* seharga *${template.price === 0 ? 'GRATIS' : 'Rp ' + template.price.toLocaleString('id-ID')}*. Bagaimana cara pembeliannya?`;
+            const message = `Halo Fahreza Store, saya tertarik dengan template *${template.name}*.\n\n*Detail:*\n• Nama: ${template.name}\n• Harga: ${template.price === 0 ? 'GRATIS' : 'Rp ' + template.price.toLocaleString('id-ID')}\n• Deskripsi: ${template.description}\n\n*Link Template:* https://rzasl.github.io/Fahreza-Store/\n\nBisa diinfokan detail pembeliannya?`;
             const encodedMessage = encodeURIComponent(message);
             const whatsappURL = `https://wa.me/6288299435445?text=${encodedMessage}`;
             window.open(whatsappURL, '_blank');
@@ -1385,10 +1385,12 @@
             cart.forEach((item, index) => {
                 const itemTotal = item.price * item.quantity;
                 total += itemTotal;
-                message += `${index + 1}. *${item.name}* - ${item.price === 0 ? 'GRATIS' : 'Rp ' + item.price.toLocaleString('id-ID')} x ${item.quantity} = ${itemTotal === 0 ? 'GRATIS' : 'Rp ' + itemTotal.toLocaleString('id-ID')}\n`;
+                message += `${index + 1}. *${item.name}*\n   Harga: ${item.price === 0 ? 'GRATIS' : 'Rp ' + item.price.toLocaleString('id-ID')} x ${item.quantity} = ${itemTotal === 0 ? 'GRATIS' : 'Rp ' + itemTotal.toLocaleString('id-ID')}\n`;
             });
             
-            message += `\n*Total: ${total === 0 ? 'GRATIS' : 'Rp ' + total.toLocaleString('id-ID')}*\n\nSilakan beritahu cara pembayaran dan pengirimannya.`;
+            message += `\n*Total Pesanan: ${total === 0 ? 'GRATIS' : 'Rp ' + total.toLocaleString('id-ID')}*\n`;
+            message += `*Link Toko:* https://rzasl.github.io/Fahreza-Store/\n\n`;
+            message += `Mohon info untuk proses pembayaran dan pengiriman filenya. Terima kasih!`;
             
             const encodedMessage = encodeURIComponent(message);
             const whatsappURL = `https://wa.me/6288299435445?text=${encodedMessage}`;
